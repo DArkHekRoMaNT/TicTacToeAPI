@@ -2,7 +2,7 @@
 {
     public abstract class BaseGameEndpoint : BaseEndpoint
     {
-        protected GameController _gameController;
+        protected readonly GameController _gameController;
 
         public BaseGameEndpoint(GameController gameController)
         {
