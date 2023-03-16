@@ -1,5 +1,7 @@
 ﻿using System.Net;
+using TicTacToeAPI.DTOs;
 using TicTacToeAPI.Models;
+using TicTacToeAPI.Utils;
 
 namespace TicTacToeAPI.Endpoints
 {
@@ -20,7 +22,7 @@ namespace TicTacToeAPI.Endpoints
             return (HttpStatusCode.OK, new CreateGameResponse
             {
                 Id = gameId,
-                Game = _gameController.GetGameById(gameId)
+                Game = _gameController.GetGameById(gameId).ToGameResponse()
             });
         }
     }

@@ -1,4 +1,6 @@
 ﻿using System.Net;
+using TicTacToeAPI.Models;
+using TicTacToeAPI.Utils;
 
 namespace TicTacToeAPI.Endpoints
 {
@@ -13,7 +15,8 @@ namespace TicTacToeAPI.Endpoints
             int gameId = GetGameId(ctx.Request.RawUrl!);
             if (_gameController.GameIds.Contains(gameId))
             {
-                return (HttpStatusCode.OK, _gameController.GetGameById(gameId));
+                Game game = _gameController.GetGameById(gameId);
+                return (HttpStatusCode.OK, game.ToGameResponse());
             }
             return (HttpStatusCode.NotFound, null);
         }

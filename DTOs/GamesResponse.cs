@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace TicTacToeAPI.Models
+namespace TicTacToeAPI.DTOs
 {
     [ProtoContract]
     public class GamesResponse

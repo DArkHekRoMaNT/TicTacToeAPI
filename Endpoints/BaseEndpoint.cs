@@ -26,7 +26,7 @@ namespace TicTacToeAPI.Endpoints
                 ctx.Response.StatusCode = (int)status;
                 if (data != null)
                 {
-                    if (true && ctx.Request.ContentType == "application/x-protobuf")
+                    if (ctx.Request.ContentType == "application/x-protobuf")
                     {
                         ctx.Response.ContentType = "application/x-protobuf";
                         ctx.Response.SendProto(data);

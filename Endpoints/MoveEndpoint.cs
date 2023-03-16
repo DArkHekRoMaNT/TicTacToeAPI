@@ -1,5 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Net;
+using TicTacToeAPI.Models;
+using TicTacToeAPI.Utils;
 
 namespace TicTacToeAPI.Endpoints
 {
@@ -28,8 +30,8 @@ namespace TicTacToeAPI.Endpoints
                 int y = int.Parse(yStr);
 
                 _gameController.Turn(gameId, x, y);
-
-                return (HttpStatusCode.OK, _gameController.GetGameById(gameId));
+                Game game = _gameController.GetGameById(gameId);
+                return (HttpStatusCode.OK, game.ToGameResponse());
             }
             return (HttpStatusCode.NotFound, null);
         }

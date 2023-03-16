@@ -1,6 +1,8 @@
 ﻿# TicTacToeAPI
 
-## /games
+## Endpoints
+
+### /games
 List of all games
 
 - 200 (Success): Returns game ids
@@ -11,136 +13,75 @@ List of all games
 ```
 
 
-## /game/create
+### /game/create
 Create a game
 
 - 200 (Success): Returns the game and its id
 ```json
 {
-   ID: 4
-   "Game": {
-     Size: 3
-     "Cells": [
-       [
-         "None",
-         "None",
-         "None"
-       ],
-       [
-         "None",
-         "None",
-         "None"
-       ],
-       [
-         "None",
-         "None",
-         "None"
-       ]
-     ],
-     "NextPlayer": "X",
-     "Winner": "None"
-   }
+  "Id": 5,
+  "Game": {
+    "Field": "___,___,___,",
+    "NextPlayer": "X",
+    "Winner": null
+  }
 }
 ```
 
 
-## /game/\{game id\}
+### /game/\{game id\}
 Show game info
 
 - 200 (Success): Returns the game
 ```json
 {
-   Size: 3
-   "Cells": [
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ]
-   ],
-   "NextPlayer": "X",
-   "Winner": "None"
+  "Field": "XOX,_O_,___,",
+  "NextPlayer": "X",
+  "Winner": null
 }
 ```
 
 - 404: Id is not found
 
 
-## /game/\{game id\}/remove
+### /game/\{game id\}/remove
 Remove game
 
 - 200 (Success)
 - 404: Id is not found
 
 
-## /game/\{game id\}/reset
+### /game/\{game id\}/reset
 Reset game
 
 - 200 (Success): Returns the game
 ```json
 {
-   Size: 3
-   "Cells": [
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ]
-   ],
-   "NextPlayer": "X",
-   "Winner": "None"
+  "Field": "___,___,___,",
+  "NextPlayer": "X",
+  "Winner": null
 }
 ```
 
 - 404: Id is not found
 
 
-## /game/\{game id\}/move?x={x}&y={y}
+### /game/\{game id\}/move?x={x}&y={y}
 Next move
 
 - 200 (Success): Returns the game
 ```json
 {
-   Size: 3
-   "Cells": [
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ],
-     [
-       "None",
-       "None",
-       "None"
-     ]
-   ],
-   "NextPlayer": "X",
-   "Winner": "None"
+  "Field": "XOX,___,___,",
+  "NextPlayer": "O",
+  "Winner": null
+}
+```
+```json
+{
+  "Field": "XOX,XO_,_O_,",
+  "NextPlayer": "X",
+  "Winner": "O"
 }
 ```
 
@@ -149,5 +90,11 @@ Next move
 
 
 
-## /
+### /
 Shows this file
+
+
+## Some extra info
+The API can also send binary packages using protobuf.
+Use ContentType "application/x-protobuf" in the request header.
+You can see the packet formats [here](/TicTacToeAPI/tree/master/DTOs).
