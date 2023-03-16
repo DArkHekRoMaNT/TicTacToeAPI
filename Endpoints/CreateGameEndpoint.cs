@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using TicTacToeAPI.DTOs;
-using TicTacToeAPI.Models;
 using TicTacToeAPI.Utils;
 
 namespace TicTacToeAPI.Endpoints
