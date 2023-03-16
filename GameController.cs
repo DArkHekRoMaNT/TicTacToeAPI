@@ -82,6 +82,7 @@ namespace TicTacToeAPI
                 }
             }
             game.NextPlayer = Player.X;
+            game.Winner = Player.None;
             Save();
         }
 

@@ -1,10 +1,10 @@
 ﻿namespace TicTacToeAPI.Endpoints
 {
-    public abstract class GameEndpoint : BaseEndpoint
+    public abstract class BaseGameEndpoint : BaseEndpoint
     {
         protected GameController _gameController;
 
-        public GameEndpoint(GameController gameController)
+        public BaseGameEndpoint(GameController gameController)
         {
             _gameController = gameController;
         }

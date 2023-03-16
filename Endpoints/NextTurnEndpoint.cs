@@ -3,7 +3,7 @@ using System.Net;
 
 namespace TicTacToeAPI.Endpoints
 {
-    public class NextTurnEndpoint : GameEndpoint
+    public class NextTurnEndpoint : BaseGameEndpoint
     {
         public NextTurnEndpoint(GameController gameController) : base(gameController) { }
 

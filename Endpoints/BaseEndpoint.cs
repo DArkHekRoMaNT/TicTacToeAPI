@@ -26,8 +26,16 @@ namespace TicTacToeAPI.Endpoints
                 ctx.Response.StatusCode = (int)status;
                 if (data != null)
                 {
-                    ctx.Response.ContentType = "application/json";
-                    await ctx.Response.SendJson(data);
+                    if (true && ctx.Request.ContentType == "application/x-protobuf")
+                    {
+                        ctx.Response.ContentType = "application/x-protobuf";
+                        ctx.Response.SendProto(data);
+                    }
+                    else
+                    {
+                        ctx.Response.ContentType = "application/json";
+                        await ctx.Response.SendJsonAsync(data);
+                    }
                 }
                 ctx.Response.Close();
             }

@@ -2,7 +2,7 @@
 
 namespace TicTacToeAPI.Endpoints
 {
-    public class ShowGameEndpoint : GameEndpoint
+    public class ShowGameEndpoint : BaseGameEndpoint
     {
         public ShowGameEndpoint(GameController gameController) : base(gameController) { }
 

@@ -2,7 +2,7 @@
 
 namespace TicTacToeAPI.Endpoints
 {
-    public class ResetGameEndpoint : GameEndpoint
+    public class ResetGameEndpoint : BaseGameEndpoint
     {
         public ResetGameEndpoint(GameController gameController) : base(gameController) { }
 
