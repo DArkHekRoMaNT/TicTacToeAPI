@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using TicTacToeAPI.Models;
 
 namespace TicTacToeAPI.Endpoints
 {
@@ -15,7 +16,10 @@ namespace TicTacToeAPI.Endpoints
 
         public override (HttpStatusCode code, object? data) InnerExecute(HttpListenerContext ctx)
         {
-            return (HttpStatusCode.OK, _gameController.GameIds);
+            return (HttpStatusCode.OK, new GamesResponse
+            {
+                GameIds = _gameController.GameIds
+            });
         }
     }
 }

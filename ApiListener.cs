@@ -45,7 +45,7 @@ namespace TicTacToeAPI
                 new CreateGameEndpoint(gameController),
                 new ResetGameEndpoint(gameController),
                 new RemoveGameEndpoint(gameController),
-                new NextTurnEndpoint(gameController),
+                new MoveEndpoint(gameController),
                 new ReadMeEndpoint()
             };
         }

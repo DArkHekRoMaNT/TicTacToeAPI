@@ -11,8 +11,12 @@ namespace TicTacToeAPI.Endpoints
         public override (HttpStatusCode code, object? data) InnerExecute(HttpListenerContext ctx)
         {
             int gameId = GetGameId(ctx.Request.RawUrl!);
-            _gameController.Reset(gameId);
-            return (HttpStatusCode.OK, _gameController.GetGameById(gameId));
+            if (_gameController.GameIds.Contains(gameId))
+            {
+                _gameController.Reset(gameId);
+                return (HttpStatusCode.OK, _gameController.GetGameById(gameId));
+            }
+            return (HttpStatusCode.NotFound, null);
         }
     }
 }
