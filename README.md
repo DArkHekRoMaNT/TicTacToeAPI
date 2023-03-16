@@ -97,4 +97,4 @@ Shows this file
 ## Some extra info
 The API can also send binary packages using protobuf.
 Use ContentType "application/x-protobuf" in the request header.
-You can see the packet formats [here](/TicTacToeAPI/tree/master/DTOs).
+You can see the packet formats [here](/DTOs).
